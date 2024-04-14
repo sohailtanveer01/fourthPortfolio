@@ -1,39 +1,45 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
-import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Landing = ({ setSelectedPage }) => {
-  const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+
+    // Function to handle downloading the resume
+    const downloadResume = () => {
+      // Replace 'your_resume.pdf' with the actual path to your resume file
+      const resumeUrl = '/path/to/your_resume.pdf';
+      window.open(resumeUrl, '_blank');
+    };
   return (
     <section
       id="home"
-      className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
+      className="md:flex md:items-center md:items-center gap-32 md:h-full py-10 mt-20"
     >
-      {/* IMAGE SECTION */}
-      <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
+      {/* IMAGE SECTION
+      <div className="w-full z-10 mt-20 p-10 ml-10 md:mt-32 flex justify-center md:order-2">
         {isAboveLarge ? (
           <div
-            className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
+            className="relative z-0 ml-40 before:absolute before:-top-10 before:-left-10 before:rounded-t-[400px]
             before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-blue before:z-[-1]"
           >
             <img
               alt="profile"
-              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
-              src="assets/dp.png"
+              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[800px] md:max-w-[800px]"
+              src="assets/image (2).png"
             />
           </div>
         ) : (
           <img
             alt="profile"
-            className="z-10 w-full max-w-[400px] md:max-w-[600px]"
-            src="assets/dp.png"
+            className="z-10 w-full max-w-[800px] md:max-w-[800px] object-cover object-center"
+            src="assets/newDP.png"
           />
         )}
-      </div>
+      </div> */}
 
       {/* MAIN TEXT */}
-      <div className="z-30 basis-2/5 mt-12 md:mt-32">
+      <div className="w-full z-10 flex ">
+      <div className="mt-32 md:mt-32 justify-center ml-20">
         {/* HEADINGS */}
         <motion.div
           initial="hidden"
@@ -45,25 +51,26 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-6xl font-playfair z-10 text-center md:text-start">
-            John {""}
+          <p className="text-6xl font-playfair z-10 text-center">
+            Sohail {""}
             <span
               className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush
               before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1]"
             >
-              Doe
+              MD
             </span>
           </p>
-
-          <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-            viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+          <div className="flex justify-center items-center mt-10">
+          <p className="m-10 mb-7 w-2/3 text-lg text-center ">
+          Empowering Businesses with Tailored SaaS Solutions and Cutting-Edge AI Integration, Unlocking Possibilities Through 4 Years of Full Stack development Expertise.
+          <br/>Currently building AI wrappers and other SAAS products.
           </p>
+          </div>
         </motion.div>
 
         {/* CALL TO ACTIONS */}
         <motion.div
-          className="flex mt-5 justify-center md:justify-start"
+          className="flex mt-10 justify-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -73,14 +80,23 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <AnchorLink
+          {/* <AnchorLink
             className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
               hover:bg-blue hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            Contact Me
-          </AnchorLink>
+            My Resume
+          </AnchorLink> */}
+
+               <a
+              href="../../assets/SohailMD.docx" 
+              download="SohailMD.docx"
+              className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
+              hover:bg-blue hover:text-white transition duration-500"
+            >
+              My Resume
+            </a>
           <AnchorLink
             className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
             onClick={() => setSelectedPage("contact")}
@@ -93,7 +109,7 @@ const Landing = ({ setSelectedPage }) => {
         </motion.div>
 
         <motion.div
-          className="flex mt-5 justify-center md:justify-start"
+          className="flex mt-5 justify-center "
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -105,6 +121,7 @@ const Landing = ({ setSelectedPage }) => {
         >
           <SocialMediaIcons />
         </motion.div>
+      </div>
       </div>
     </section>
   );
