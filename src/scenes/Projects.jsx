@@ -15,7 +15,7 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
+const Project = ({ title, url }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
@@ -25,7 +25,7 @@ const Project = ({ title }) => {
       <div className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">
-          <span className="text-red">View</span> Details
+          <a href={url} className="text-red">View</a> Details
         </p>
       </div>
       <img src={`../assets/${projectTitle}.png`} alt={projectTitle} />
@@ -78,17 +78,17 @@ const Projects = () => {
           >
             SaaS Solutions <br/>&<br/> AI WRAPPERS
           </div>
-          <Project title="AskAGI" />
-          <Project title="iqaas" />
+          <Project title="AskAGI" url={'https://www.askagi.com/'}/>
+          <Project title="iqaas" url={'https://www.iqaas.ai/'}/>
 
           {/* ROW 2 */}
-          <Project title="dashboards" />
-          <Project title="wolfgpt" />
+          <Project title="dashboards" url={'https://sales-duo-dash.vercel.app/app/dashboard'}/>
+          <Project title="wolfgpt" url={'https://www.wolfgpt.online/'}/>
 
           {/* ROW 3 */}
-          <Project title="imdb-clone" />
+          <Project title="imdb-clone" url={'https://imdb-clone-one.vercel.app/'}/>
 
-          <Project title="ecom" />
+          <Project title="ecom" url={'https://ecom-vercel-omega.vercel.app/'}/>
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
