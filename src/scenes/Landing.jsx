@@ -90,8 +90,8 @@ const Landing = ({ setSelectedPage }) => {
           </AnchorLink> */}
 
                <a
-              href="../../assets/SohailMD.docx" 
-              download="SohailMD.docx"
+              href="../../assets/Sohail MD.pdf" 
+              download="Sohail MD.pdf"
               className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
               hover:bg-blue hover:text-white transition duration-500"
             >
