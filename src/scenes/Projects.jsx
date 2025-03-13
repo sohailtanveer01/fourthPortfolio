@@ -78,7 +78,7 @@ const Projects = () => {
           >
             SaaS Solutions <br/>&<br/> AI WRAPPERS
           </div>
-          <Project title="AskAGI" url={'https://www.askagi.com/'}/>
+          <Project title="AItomates" url={'https://aitomates.com/'}/>
           <Project title="iqaas" url={'https://www.iqaas.ai/'}/>
 
           {/* ROW 2 */}
